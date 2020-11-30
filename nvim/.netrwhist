@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/jayjackson/.config/nvim/autoload'
+let g:netrw_dirhist_3='/Users/jayjackson/.config/nvim'
+let g:netrw_dirhist_2='/Users/jayjackson/.config'
+let g:netrw_dirhist_1='/Users/jayjackson'
+let g:netrw_dirhist_0='/Users/jayjackson/.local/share'
+let g:netrw_dirhist_9='/Users/jayjackson/.local/share/nvim'
+let g:netrw_dirhist_8='/Users/jayjackson/.local/share/nvim/swap'
+let g:netrw_dirhist_7='/Users/jayjackson/.local/share/nvim'
+let g:netrw_dirhist_6='/Users/jayjackson/.local/share/nvim/site'
+let g:netrw_dirhist_5='/Users/jayjackson/.local/share/nvim/site/autoload'
