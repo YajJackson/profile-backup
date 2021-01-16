@@ -6,16 +6,23 @@ zstyle ':vcs_info:git:*' formats '%F{green}(%b)%f'
 
 eval "$(pyenv init -)"
 
+# iterm2 tab title config
+DISABLE_AUTO_TITLE="true"
+precmd() {
+  # sets the tab title to current dir
+  echo -ne "\e]1;${PWD##*/}\a"
+}
+precmd
+
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
 # PROMPT='%(?.%F{green}√.%F{red}!%?)%f %1d ${vcs_info_msg_0_} ⊳ '
 PROMPT=' %1d ${vcs_info_msg_0_} ⊳ '
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# Flutter Development
-export PATH="$PATH:$HOME/Library/flutter/bin"
 
 alias v='nvim .'
 alias vim='nvim'
@@ -32,13 +39,13 @@ alias notebook='jupyter notebook'
 alias ll='ls -lG'
 alias copy='cp -R'
 alias show='tree -L 2'
+alias vconfig='vim ~/.config/nvim'
 
 mkcd () {
     mkdir $1
     cd $1
 }
-# Codi
-# Usage: codi [filetype] [filename]
+
 codi() {
   local syntax="${1:-python}"
   shift
